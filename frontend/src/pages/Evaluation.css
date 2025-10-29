@@ -1,0 +1,76 @@
+/* src/pages/Evaluation.css */
+.evaluation-container h2 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Contenedor del formulario */
+.form-wrapper {
+  border: 2px solid #8B0000;
+  border-radius: 10px;
+  padding: 2.5rem;
+  margin-top: 2rem;
+}
+
+/* Grid para los campos del formulario */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem 2rem; /* Fila / Columna */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.8rem 1rem;
+  border: 2px solid #8B0000;
+  border-radius: 25px; /* Bordes redondeados del boceto */
+  font-size: 1rem;
+  width: 100%;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+/* Mensaje de error */
+.error-message {
+  color: #d93025;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  font-weight: bold;
+}
+
+/* Responsive para el formulario */
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr; /* 1 columna en móvil */
+  }
+  .form-wrapper {
+    padding: 1.5rem;
+  }
+  .form-buttons {
+    flex-direction: column;
+  }
+}

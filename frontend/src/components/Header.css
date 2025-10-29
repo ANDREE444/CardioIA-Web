@@ -1,0 +1,21 @@
+/* src/components/Footer.css */
+.app-footer {
+  background-color: #4a4a4a;
+  color: #c0c0c0;
+  padding: 2rem 2.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: auto; /* Empuja el footer al fondo */
+}
+
+.app-footer strong {
+  color: #ffffff;
+}
+
+.app-footer p {
+  margin-bottom: 0.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
