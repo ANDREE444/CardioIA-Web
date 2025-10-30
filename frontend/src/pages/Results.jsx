@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from "recharts";
@@ -28,10 +27,21 @@ function Results() {
     return <div className="page-container">Cargando resultados...</div>;
   }
 
-  // Validación adicional
-  if (!resultado.riesgo || !resultado.probabilidad) {
-    console.error('Datos incompletos en resultado:', resultado);
-    return <div className="page-container">Error: Datos incompletos. Por favor, realice la evaluación nuevamente.</div>;
+  // ✅ Validación mejorada de datos
+  if (
+    resultado.riesgo === undefined ||
+    resultado.probabilidad === undefined ||
+    resultado.riesgo === null ||
+    resultado.probabilidad === null ||
+    resultado.riesgo === '' ||
+    isNaN(resultado.probabilidad)
+  ) {
+    console.error('Datos incompletos o inválidos en resultado:', resultado);
+    return (
+      <div className="page-container">
+        Error: Datos incompletos o inválidos. Por favor, realice la evaluación nuevamente.
+      </div>
+    );
   }
 
   const riesgoAlto = parseFloat(resultado.probabilidad);
